@@ -43,8 +43,17 @@ export const GlobalStyle = createGlobalStyle`
     font-family: inherit;
   }
 
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webki-outer-spin-button,
+  input::-webki-inner-spin-button, {
+    -webkit-appearance: none;
+  }
+
   h1, h2, h3 {
-    font-family: Pacifico;
+    font: Pacifico;
   }
 
   h1, h2, h3, p {
