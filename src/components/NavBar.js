@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import logoImg from '../image/logo.svg';
+import signinImg from '../image/sign.svg';
 
 const NavBarStyled = styled.header`
     position: fixed;
@@ -31,13 +32,23 @@ const ImgLogo = styled.img`
     width: 50px;
 `;
 
+const Login = styled.button`
+    background-color: transparent;
+    border-color: transparent;
+    color: #fff;
+    gont-size: 16px;
+`;
+
 
 export const NavBar = () => (
     <NavBarStyled>
         <Logo>
-            <ImgLogo src={logoImg} alt="asd"/>
+            <ImgLogo src={logoImg} alt="logo"/>
             <H1>Dadlee burgers</H1>
         </Logo>
-        <button>log in</button>
+        <Login>
+            <img src={signinImg} alt='signin'/>
+            <p>Log in</p>
+        </Login>
     </NavBarStyled>
 )
