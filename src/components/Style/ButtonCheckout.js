@@ -19,4 +19,14 @@ export const ButtonCheckout = styled.button`
         color: #299b01;
         border-color: #299b01;
     }
+
+    &:disabled {
+        background-color: rgba(0,0,0,.4);
+
+        &:hover {
+            background-color: rgba(0,0,0,.6);
+            border-color: rgba(0,0,0,.6);
+            color: #fff;
+        }
+    }
 `;
