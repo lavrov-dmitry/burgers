@@ -21,7 +21,7 @@ function App() {
       <GlobalStyle/>
       <NavBar/>
       <Menu {...openItem}/>
-      <Order {...orders}/>
+      <Order {...orders} {...openItem}/>
       {openItem.openItem && <ModalItem {...openItem} {...orders}/>}
     </>
   );
