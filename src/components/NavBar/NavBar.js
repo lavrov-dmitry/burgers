@@ -32,23 +32,54 @@ const ImgLogo = styled.img`
     width: 50px;
 `;
 
-const Login = styled.button`
+const LogIn = styled.button`
     background-color: transparent;
     border-color: transparent;
     color: #fff;
     gont-size: 16px;
 `;
 
+const User = styled.div`
+    display: flex;
+    align-items: center;
+    text-align: center;
+`;
 
-export const NavBar = () => (
+const LogOut = styled.span`
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 30px;
+`;
+
+const Figure = styled.figure`
+    margin: 0px 30px;
+`;
+
+
+export const NavBar = ({ authentification, logIn, logOut }) => (
     <NavBarStyled>
         <Logo>
             <ImgLogo src={logoImg} alt="logo"/>
             <H1>Dadlee burgers</H1>
         </Logo>
-        <Login>
-            <img src={signinImg} alt='signin'/>
-            <p>Log in</p>
-        </Login>
+        {authentification ? 
+            <User>
+                <Figure>
+                 <img src={signinImg} alt={authentification.displayName}/>
+                 <figcaption>{authentification.displayName}</figcaption>
+                </Figure>
+                <LogOut 
+                    title="log out"
+                    onClick={logOut}
+                >X</LogOut>
+            </User>
+            : <LogIn onClick={logIn}>
+                <Figure>
+                <img src={signinImg} alt='signin'/>
+                <figcaption>Log in</figcaption>
+                </Figure>
+            </LogIn>
+          }
     </NavBarStyled>
 )
